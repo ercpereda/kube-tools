@@ -1,6 +1,10 @@
 FROM golang:1.15
 
-COPY LICENSE README.md /
+RUN groupadd -g 999 appuser && \
+    useradd -r -u 999 -g appuser appuser
+USER appuser
+
+COPY --chown=appuser:appuser LICENSE README.md /
 COPY src/ /
 RUN /install.sh
 
