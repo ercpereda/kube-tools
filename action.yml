@@ -20,6 +20,10 @@ inputs:
     description: 'kubeseal version'
   kubeaudit:
     description: 'kubeaudit version'
+  yq:
+    description: 'yq version'
+  jq:
+    description: 'jq version'
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -30,3 +34,5 @@ runs:
     - ${{ inputs.helm }}
     - ${{ inputs.helmv3 }}
     - ${{ inputs.kubeseal }}
+    - ${{ inputs.yq }}
+    - ${{ inputs.jq }}
